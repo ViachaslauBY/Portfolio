@@ -1,0 +1,204 @@
+/* ===== СБРОС И ПЕРЕМЕННЫЕ ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Светлая тема по умолчанию */
+:root {
+  --bg: #ffffff;
+  --header-bg: #ffffff;
+  --text: #1e293b;
+  --accent: #3b82f6;
+  --border: #e2e8f0;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Тёмная тема — перекрываем переменные */
+.page--dark {
+  --bg: #0f172a;
+  --header-bg: #1e293b;
+  --text: #e2e8f0;
+  --accent: #3b82f6;
+  --border: #334155;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== ОБЩИЕ СТИЛИ ===== */
+.page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.page__body {
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--header-bg);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__logo-link {
+  display: block;
+  text-decoration: none;
+}
+
+.header__logo {
+  max-height: 50px;
+  width: auto;
+  transition: filter 0.3s ease;
+}
+
+.header__nav {
+  transition: all 0.5s;
+}
+
+.header__list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.header__link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.header__link:hover {
+  color: var(--accent);
+}
+
+/* Кнопка-переключатель */
+.header__icon-toggle {
+  display: flex;
+  margin-right: 10px;
+  z-index: 3;
+}
+
+.material-icons {
+  font-size: 30px;
+  line-height: normal;
+}
+
+.page--dark .material-icons {
+  color: #fff;
+}
+
+/* ——— Бургер-кнопка ——— */
+.header__burger {
+  position: relative;
+  display: none;
+  width: 30px;
+  height: 18px;
+  z-index: 3;
+}
+
+.burger__line {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.2s;
+}
+
+.page--dark .burger__line {
+  background-color: #fff;
+}
+
+.burger__line:first-child {
+  top: 0;
+}
+
+.burger__line:last-child {
+  top: auto;
+  bottom: 0;
+}
+
+.header__burger.active .burger__line {
+  transform: scale(0);
+}
+
+.header__burger.active .burger__line:first-child {
+  top: calc(50% - 1px);
+  transform: rotate(-45deg);
+}
+
+.header__burger.active .burger__line:last-child {
+  bottom: calc(50% - 1px);
+  transform: rotate(45deg);
+}
+
+/* ===== АДАПТИВ  ===== */
+@media (max-width: 768px) {
+  .header__logo {
+    max-height: 40px;
+  }
+
+  .header__burger {
+    display: block;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    overflow: auto;
+    transition: all 0.2s;
+    z-index: 2;
+  }
+
+  .page--dark .header__nav {
+    background-color: #000;
+  }
+
+  .header__nav.active {
+    left: 0;
+  }
+
+  .header__list {
+    flex-direction: column;
+    margin: 100px auto 0px;
+    text-align: center;
+  }
+
+  .header__item:not(:last-child) {
+    margin-right: 0px;
+  }
+
+  .header__link {
+    display: block;
+    font-size: 24px;
+    line-height: 50px;
+  }
+
+  .header__link:hover {
+    color: #000;
+  }
+}
