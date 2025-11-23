@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Title -->
   <title>Вячеслав Федорцов | Frontend Developer</title>
   
   <!-- Description → фокус на услуги, технологии, формат работы -->
@@ -57,29 +56,55 @@
     <header class="header">
       <a href="#home" class="header__logo-link">
         <img src="img/logo.png" alt="VF — логотип Вячеслава Федорцова" class="header__logo" />
-      </a>      
-    
+      </a>         
       <nav class="header__nav">
         <ul class="header__list">
           <li class="header__item"><a href="#about" class="header__link">Обо мне</a></li>
           <li class="header__item"><a href="#portfolio" class="header__link">Работы</a></li>
           <li class="header__item"><a href="#contacts" class="header__link">Контакты</a></li>
         </ul>
-      </nav>
-      
+      </nav>      
       <button class="header__icon-toggle" id="button-toggle" aria-label="Changing the color theme">
         <span class="material-icons" id="icon-toggle"></span>
       </button>
-
-      <!-- Бургер-меню (Мобильная версия) -->
+      
       <button class="header__burger" type="button" aria-label="Меню">
         <span class="burger__line"></span>
         <span class="burger__line"></span>
         <span class="burger__line"></span>
       </button>            
     </header>
-    
-    <main>      
+
+    <main>   
+      <section class="about">
+        <div class="about__container container">
+          <div class="about__content">            
+            <div class="about__photo-wrapper">
+              <img
+                src="img/avatar.png"
+                class="about__photo" 
+                alt="Федорцов Вячесдав"/>
+            </div>                             
+            <div class="about__description">
+              <h2 class="about__title">Обо мне</h2>
+              <p class="about__text">
+                Я — frontend-разработчик с фокусом на качественную вёрстку и клиентские интерфейсы.
+                Мой подход сочетает внимание к деталям, строгую семантику и современные практики:
+                адаптивность, доступность, модульность и поддерживаемость кода.
+              </p>
+              <p class="about__text">
+                В работе использую HTML5, CSS3 (Flexbox, Grid, BEM), JavaScript (ES6+),
+                React и инструменты сборки (Vite, Webpack). Верстаю с нуля, интегрирую макеты из Figma,
+                оптимизирую производительность и подготавливаю проекты к масштабированию.
+              </p>
+              <p class="about__text">
+                Считаю, что хороший код — это не только рабочий, но и понятный, предсказуемый и легко изменяемый.
+                Поэтому работаю с чёткой структурой, документацией и продуманными архитектурными решениями.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
   </body>
